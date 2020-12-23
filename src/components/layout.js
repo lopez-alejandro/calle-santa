@@ -22,7 +22,6 @@ export default ({ children }) => {
         <div className="site-title">
           <Link to="/">{data.site.siteMetadata.title}</Link>
         </div>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <Navigation />
       </header>
       {children}
