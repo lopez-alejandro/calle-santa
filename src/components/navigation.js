@@ -25,6 +25,7 @@ const netlifyAuth = {
 };
 
 const login = () => {
+  console.log('you clicked the login button');
   netlifyAuth.authenticate(() => {
     this.setState({ redirectToReferrer: true });
   });
@@ -33,7 +34,7 @@ const login = () => {
 export default (props) => (
   <nav className="navigation">
     <div data-netlify-identity-menu></div>
-    <div data-netlify-identity-button className="button -primary" onclick={login}></div>
+    <div data-netlify-identity-button className="button -primary" onClick={login}>Login</div>
     <Link to="/contact">Contact</Link>
     <ThemeChanger/>
   </nav>
