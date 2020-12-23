@@ -28,6 +28,7 @@ module.exports = {
             noInlineHighlight: false,
           },
         },
+        'gatsby-plugin-netlify-identity-widget',
         {
           resolve: 'gatsby-remark-emojis',
         }],
