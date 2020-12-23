@@ -33,7 +33,7 @@ const login = () => {
 export default (props) => (
   <nav className="navigation">
     <div data-netlify-identity-menu></div>
-    <div data-netlify-identity-button class="button" onclick={login}></div>
+    <div data-netlify-identity-button className="button -primary" onclick={login}></div>
     <Link to="/contact">Contact</Link>
     <ThemeChanger/>
   </nav>
