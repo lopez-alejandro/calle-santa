@@ -9,7 +9,7 @@ const netlifyAuth = {
   user: null,
   authenticate(callback) {
     this.isAuthenticated = true;
-    netlifyIdentity.open();
+    // netlifyIdentity.open();
     netlifyIdentity.on('login', user => {
       this.user = user;
       callback(user);
@@ -35,8 +35,8 @@ const login = () => {
 
 export default (props) => (
   <nav className="navigation">
-    <div data-netlify-identity-menu></div>
-    <div data-netlify-identity-button className="button -primary" onClick={login}>Login</div>
+    <div data-netlify-identity-menu onClick={login}></div>
+    {/* <div data-netlify-identity-button className="button -primary" onClick={login}>Login</div> */}
     <Link to="/contact">Contact</Link>
     <ThemeChanger/>
   </nav>
