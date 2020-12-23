@@ -21,9 +21,21 @@ export default ({ children }) => {
         <div className="site-title">
           <Link to="/">{data.site.siteMetadata.title}</Link>
         </div>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <Navigation />
       </header>
       {children}
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
       <footer className="site-footer">
         <p>&copy; {new Date().getFullYear()} Delog &bull; Crafted with <span role="img" aria-label="love">❤️</span> by <a href="https://w3layouts.com">W3Layouts</a></p>
       </footer>
