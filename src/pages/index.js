@@ -5,8 +5,10 @@ import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import HeroHeader from "../components/heroHeader"
 import netlifyIdentity from 'netlify-identity-widget';
+import { window } from 'browser-monads';
 
 // You must run this once before trying to interact with the widget
+window.netlifyIdentity = netlifyIdentity;
 netlifyIdentity.init();
 
 const IndexPage = ({
