@@ -21,6 +21,7 @@ const IndexPage = ({
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Helmet>
       <HeroHeader/>
       <h2>Blog Posts &darr;</h2>
