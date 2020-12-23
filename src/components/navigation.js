@@ -24,7 +24,7 @@ const netlifyAuth = {
   }
 };
 
-login = () => {
+const login = () => {
   netlifyAuth.authenticate(() => {
     this.setState({ redirectToReferrer: true });
   });
