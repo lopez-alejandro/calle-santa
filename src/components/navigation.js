@@ -1,7 +1,8 @@
 import React from "react"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 import ThemeChanger from "../components/themeChanger"
 import netlifyIdentity from 'netlify-identity-widget';
+import { document } from 'browser-monads';
 
 const netlifyAuth = {
   isAuthenticated: false,
@@ -28,7 +29,7 @@ const login = () => {
   console.log('you clicked the login button');
   netlifyAuth.authenticate(() => {
     this.setState({ redirectToReferrer: true });
-    navigate('/admin');
+    document.location.href = "/admin/";
   });
 };
 
