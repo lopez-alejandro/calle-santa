@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby"
+import { Link, navigate } from "gatsby"
 import ThemeChanger from "../components/themeChanger"
 import netlifyIdentity from 'netlify-identity-widget';
 
@@ -28,6 +28,7 @@ const login = () => {
   console.log('you clicked the login button');
   netlifyAuth.authenticate(() => {
     this.setState({ redirectToReferrer: true });
+    navigate('/admin');
   });
 };
 
