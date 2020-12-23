@@ -17,17 +17,18 @@ const IndexPage = ({
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
-  useEffect(() => {
-    // You must run this once before trying to interact with the widget
-    window.netlifyIdentity = netlifyIdentity;
-    netlifyIdentity.init();
-  });
+  // useEffect(() => {
+  //   // You must run this once before trying to interact with the widget
+  //   window.netlifyIdentity = netlifyIdentity;
+  //   netlifyIdentity.init();
+  // });
 
   return (
     <Layout>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
+        <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Helmet>
       <HeroHeader/>
       <h2>Blog Posts &darr;</h2>
